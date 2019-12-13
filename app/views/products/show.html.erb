@@ -1,7 +1,17 @@
 <h1><%= @product.title %></h1>
 
-<p><%= @product.description %></p>
+<p>
+  <h5 class="my-0 mr-md-auto font-weight-bold"> Описание товара: </h5>
+  <%= @product.description %>
+</p>
 
-<%= link_to 'Изменить', edit_product_path(@product) %>
-<%= link_to 'Удалить', product_path(@product), method: :delete, data: { confirm: "Вы уверены?" }%>
-<%= link_to 'Все товары', products_path %>
+<p>
+  <h5 class="my-0 mr-md-auto font-weight-bold"> Цена товара </h5> <%= @product.price %>
+</p>
+
+<p>
+  <h5 class="my-0 mr-md-auto font-weight-bold"> В наличии </h5> <%= @product.amount %>
+</p>
+
+<%= link_to "Редактировать", edit_product_path(@product), :class => 'btn btn-warning'%>
+<%= link_to "Удалить товар", product_path(@product), method: :delete, data: {confirm: "Хотите удалить товар?"}, :class => 'btn btn-danger'%>

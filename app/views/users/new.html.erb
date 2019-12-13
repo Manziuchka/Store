@@ -1,3 +1,27 @@
-<h1> Регистрация польователя</h1>
+<h2> Регистрация пользователя </h2>
 
-<%= render 'form' %>
+<%= form_for :user, url: users_path do |f| %>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"> <%= msg %> </div>
+    <% end %>
+  <% end %>
+  <p>
+    Имя <br>
+    <%= f.text_field(:name, {:class => 'form-control' }) %>
+  </p>
+
+    <p>
+      E-mail <br>
+      <%= f.text_field(:email, {:class => 'form-control' }) %>
+    </p>
+
+    <p>
+      Пароль <br>
+      <%= f.password_field(:password_digest, {:class => 'form-control' }) %>
+    </p>
+
+    <p>
+      <%= f.submit ({:class => 'btn btn-success' })  %>
+    </p>
+  <% end %>
