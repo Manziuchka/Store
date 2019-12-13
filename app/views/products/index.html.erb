@@ -1,0 +1,5 @@
+<h1>Товары</h1>
+<%= link_to 'Новый товар', new_product_path %>
+<% @products.each do |product| %>
+    <h2><%= link_to product.title, product_path(product) %> </h2>
+<% end %>

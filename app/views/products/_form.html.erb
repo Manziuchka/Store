@@ -1,0 +1,25 @@
+<%= form_for @product do |f| %>
+  <div class="form-control">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>
